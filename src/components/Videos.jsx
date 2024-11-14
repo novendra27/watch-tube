@@ -2,10 +2,10 @@ import { Stack, Box } from "@mui/material"
 
 import { VideoCard, ChannelCard } from "./"
 
-const Videos = ({ videos }) => {
-    console.log(videos)
+const Videos = ({ videos, direction }) => {
+    if (!videos?.length) return 'Loading...'
     return (
-        <Stack direction='row' flexWrap='wrap' justifyContent='start' gap={2}>
+        <Stack direction={direction || 'row'} flexWrap='wrap' justifyContent='start' gap={2}>
             {videos && videos.map((item, index) => (
                 item?.id?.videoId || item?.id?.channelId ? ( // Cek jika ada videoId atau channelId, dan abaikan playlistId
                     <Box key={index}>
