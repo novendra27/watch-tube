@@ -21,12 +21,12 @@ const VideoDetail = () => {
     }, [id])
 
     if (!videoDetail?.snippet) return 'Loading...'
-    const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail
+    const { snippet: { title, channelId, channelTitle, description }, statistics: { viewCount, likeCount } } = videoDetail
 
     return (
         <Box minHeight="95vh">
-            <Stack direction={{ xs: 'column', md: 'row' }}>
-                <Box flex={1}>
+            <Stack direction={{ xs: 'column', md: 'row' }} height="100%">
+                <Box flex={1} sx={{ overflowY: 'auto', height: 'calc(100vh - 86px)' }}>
                     <Box sx={{ width: '100%', position: 'sticky', top: '86px' }}>
                         <ReactPlayer
                             url={`https://www.youtube.com/watch?v=${id}`}
@@ -52,9 +52,14 @@ const VideoDetail = () => {
                                 </Typography>
                             </Stack>
                         </Stack>
+                        <Box p={2}>
+                            <Typography color="#fff" variant="h7" fontWeight="medium">
+                                {description.length > 1000 ? `${description.slice(0, 1000)}...` : description}
+                            </Typography>
+                        </Box>
                     </Box>
                 </Box>
-                <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center">
+                <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" sx={{ overflowY: 'auto', height: 'calc(100vh - 86px)' }}>
                     <Videos videos={videos} direction="column" />
                 </Box>
             </Stack>
