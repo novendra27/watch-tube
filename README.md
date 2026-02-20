@@ -1,70 +1,148 @@
-# Getting Started with Create React App
+# WatchTube
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern YouTube clone application built with React 18 and Material-UI, providing a seamless video browsing experience with real-time data from YouTube API.
 
-## Available Scripts
+## 🌐 Live Demo
 
-In the project directory, you can run:
+**[View Live Application](https://nov-watch-tube.vercel.app/)**
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Video Feed**: Browse trending and category-specific videos
+- **Search Functionality**: Search for videos with real-time results
+- **Video Player**: Watch videos with detailed information including views and likes
+- **Channel Details**: View channel information and their video collections
+- **Related Videos**: Discover related content while watching videos
+- **Responsive Design**: Fully responsive UI that works on all devices
+- **Category Filtering**: Filter videos by categories like Music, Gaming, Education, etc.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies Used
 
-### `npm test`
+- **React 18** - UI library with Hooks (useState, useEffect)
+- **Vite** - Next-generation frontend build tool
+- **Material-UI (MUI)** - Modern React component library
+- **React Router DOM v6** - Client-side routing
+- **Axios** - HTTP client for API requests
+- **React Player** - Video playback component
+- **RapidAPI (YouTube v31)** - YouTube data integration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📋 Prerequisites
 
-### `npm run build`
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or higher)
+- npm or yarn package manager
+- A RapidAPI key for YouTube v31 API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Installation & Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the Repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/novendra27/watch-tube.git
+cd watch-tube
+```
 
-### `npm run eject`
+### 2. Install Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+or if you use yarn:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+yarn install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Setup Environment Variables
 
-## Learn More
+Create a `.env` file in the root directory and add your RapidAPI key:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```env
+VITE_RAPID_API_KEY=your_rapidapi_key_here
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To get your RapidAPI key:
+1. Visit [RapidAPI](https://rapidapi.com/)
+2. Sign up or log in to your account
+3. Subscribe to [YouTube v31 API](https://rapidapi.com/ytdlfree/api/youtube-v31)
+4. Copy your API key from the dashboard
 
-### Code Splitting
+### 4. Run the Development Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run dev
+```
 
-### Analyzing the Bundle Size
+or with yarn:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+yarn dev
+```
 
-### Making a Progressive Web App
+The application will open at `http://localhost:5173`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📦 Build for Production
 
-### Advanced Configuration
+To create a production build:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm run build
+```
 
-### Deployment
+To preview the production build locally:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm run preview
+```
 
-### `npm run build` fails to minify
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+watch-tube/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React components
+│   │   ├── Feed.jsx
+│   │   ├── VideoDetail.jsx
+│   │   ├── ChannelDetail.jsx
+│   │   ├── SearchFeed.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── Sidebar.jsx
+│   │   ├── Videos.jsx
+│   │   ├── VideoCard.jsx
+│   │   └── ChannelCard.jsx
+│   ├── utils/           # Utility functions
+│   │   ├── fetchFromAPI.jsx
+│   │   └── constants.jsx
+│   ├── App.jsx          # Main App component
+│   ├── main.jsx         # Entry point
+│   └── index.css        # Global styles
+├── .env                 # Environment variables
+├── package.json         # Dependencies
+└── vite.config.js       # Vite configuration
+```
+
+## 🎯 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 👤 Author
+
+**Novendra27**
+- GitHub: [@novendra27](https://github.com/novendra27)
+- Project: [WatchTube](https://github.com/novendra27/watch-tube)
+
+## 🙏 Acknowledgments
+
+- YouTube API provided by RapidAPI
+- UI inspiration from YouTube
+- Built with React and Material-UI
