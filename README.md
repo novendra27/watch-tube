@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WatchTube
 
 A modern YouTube clone application built with React 18 and Material-UI, providing a seamless video browsing experience with real-time data from YouTube API.
@@ -146,3 +147,13 @@ This project is open source and available under the MIT License.
 - YouTube API provided by RapidAPI
 - UI inspiration from YouTube
 - Built with React and Material-UI
+=======
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+>>>>>>> 4f0e772fd63925b461414058b508d02d96dfa4f6
